@@ -1,0 +1,25 @@
+<div class="account">
+  <div class="account__container">
+    <div class="account__image">
+      <img [src]="icon" alt="" class="account__img" />
+    </div>
+    <div class="account__info">
+      <div class="account__nickname">
+        <p>Your nickname</p>
+        <input type="text" class="account__nickname_input input" />
+      </div>
+      <div class="account__email">
+        <p>Your email</p>
+        <input type="text" class="account__email_input input" />
+      </div>
+      <div class="account__password">
+        <p>Your password</p>
+        <input type="text" class="account__password_input input" />
+      </div>
+      <div class="account__top-position">
+        Your position is <a routerLink="/top-list">#the best</a>
+      </div>
+      <app-back-button routerLink=""></app-back-button>
+    </div>
+  </div>
+</div>

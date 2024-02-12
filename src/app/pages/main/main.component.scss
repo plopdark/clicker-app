@@ -1,0 +1,172 @@
+@import "../../styles/mixin.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 5;
+}
+.main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  @include _bg-styles;
+  position: relative;
+
+  &__account {
+    padding-right: 15px;
+    padding-top: 25px;
+
+    &_btn {
+      justify-content: flex-end;
+      display: flex;
+      cursor: pointer;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    &_reg {
+    }
+  }
+
+  &__reg {
+    z-index: 6;
+    top: 37%;
+    left: 41%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &_title {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    &_inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    &_input {
+      width: 330px;
+      height: 30px;
+      padding: 15px;
+      font-size: 20px;
+    }
+
+    &_remember {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 7px;
+      font-size: 20px;
+    }
+
+    &_check {
+      width: 17px;
+      cursor: pointer;
+    }
+
+    &_text {
+    }
+
+    &_buttons {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &_button {
+      :hover {
+        text-decoration: underline;
+      }
+    }
+
+    &_btn {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  &__clicker {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &_count {
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+
+    &_count-number {
+    }
+
+    &_button {
+      width: 400px;
+      height: 400px;
+      background-color: #f2ff00;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &_button-btn {
+      color: #000;
+      font-size: 50px;
+      user-select: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    background-color: #4a4a4a;
+    height: 100px;
+    align-items: center;
+    &_top {
+      cursor: pointer;
+      border: 3px solid #000;
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_output {
+      cursor: pointer;
+      border: 3px solid #000;
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_logout {
+      cursor: pointer;
+      border: 3px solid #000;
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
