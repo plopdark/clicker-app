@@ -1,0 +1,106 @@
+<app-overlay
+  (click)="overlayClosed()"
+  *ngIf="isInfoFirstOpened || isInfoSecondOpened"
+></app-overlay>
+<div class="shop">
+  <div class="shop__container">
+    <div class="shop__items">
+      <div class="shop__item">
+        <div class="shop__item_image">
+          <img [src]="botImg" alt="icon" class="shop__item_img" />
+        </div>
+        <div class="shop__item_title">
+          <h2>
+            Clicker level
+            <span
+              ><a class="shop__item_inf" (click)="openInfoFirst()"
+                >info</a
+              ></span
+            >
+          </h2>
+        </div>
+        <div class="shop__item_info info" *ngIf="isInfoFirstOpened">
+          <div class="info__text">
+            <p>
+              Unlock the power of your clicks with our Clicker Upgrade system!
+              <br />
+              Here's how it works:
+            </p>
+            <ul>
+              <li>
+                <h4>Level 1 (Default):</h4>
+                Cost: 0 coins. Earn 1 coin per click.
+              </li>
+              <li>
+                <h4>Level 2:</h4>
+                Cost: 30 coins. Earn 2 coins per click.
+              </li>
+              <li>
+                <h4>Level 3:</h4>
+                Cost: 50 coins. Earn 3 coins per click.
+              </li>
+              <li>
+                <h4>Level 4:</h4>
+                Cost: 100 coins. Earn 4 coins per click.
+              </li>
+              <li>
+                <h4>Level 5:</h4>
+                Cost: 150 coins. Earn 5 coins per click.
+              </li>
+            </ul>
+            <h2>Your current level is 1</h2>
+          </div>
+        </div>
+        <div class="shop__item_button">
+          <p>level 1</p>
+          <button class="shop__item_btn">Upgrade</button>
+        </div>
+      </div>
+      <div class="shop__item">
+        <div class="shop__item_image">
+          <img [src]="clickImg" alt="icon" class="shop__item_img" />
+        </div>
+        <div class="shop__item_title">
+          <h2>
+            Auto-clicker
+            <span
+              ><a class="shop__item_inf" (click)="openInfoSecond()"
+                >info</a
+              ></span
+            >
+          </h2>
+        </div>
+        <div class="shop__item_info info" *ngIf="isInfoSecondOpened">
+          <div class="info__text">
+            <p>
+              This nifty tool enhances your clicking efficiency by automatically
+              generating coins for you.
+              <br />
+              Here's what you need to know:
+            </p>
+            <ul>
+              <li>
+                <h4>Cost:</h4>
+                The AutoClicker can be yours for 500 coins.
+              </li>
+              <li>
+                <h4>Activation:</h4>
+                It operates exclusively when the browser tab is open, ensuring
+                that you reap its benefits while actively engaged.
+              </li>
+              <li>
+                <h4>Earnings:</h4>
+                With its swift performance, the AutoClicker generates 3 coins
+                per second, exponentially boosting your wealth accumulation.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="shop__item_button">
+          <button class="shop__item_btn">Buy</button>
+        </div>
+      </div>
+    </div>
+    <app-back-button routerLink="/"></app-back-button>
+  </div>
+</div>

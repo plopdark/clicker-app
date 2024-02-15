@@ -1,0 +1,112 @@
+@import "../../styles/mixin.scss";
+
+.shop {
+  @include _bg-styles;
+  min-height: 100%;
+  position: relative;
+  &__container {
+    width: 1000px;
+    margin: 70px auto;
+    min-height: calc(100vh - 140px);
+    background-color: #0e005d;
+    padding: 30px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    gap: 30px;
+    min-height: 100%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid #030a3a;
+    padding: 10px;
+    img {
+      width: 100px;
+      margin-right: 20px;
+    }
+    &_image {
+    }
+
+    &_img {
+    }
+
+    &_title {
+      font-size: 35px;
+      margin-right: 10px;
+      span {
+        margin-left: -5px;
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+
+    &_inf {
+      text-decoration: underline;
+      cursor: pointer;
+      color: #b7b7b7;
+      text-decoration-style: dotted;
+    }
+
+    &_button {
+      margin-left: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      :hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
+      p {
+        margin-top: 5px;
+        font-weight: 400;
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+
+    &_btn {
+      background-color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.info {
+  position: absolute;
+  top: 35%;
+  right: 35%;
+  z-index: 10;
+  background-color: #0e005d;
+  max-width: 650px;
+
+  &__text {
+    margin: 20px;
+    p {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    li {
+      font-weight: 400;
+      gap: 10px;
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin-bottom: 5px;
+    }
+    h2 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+}

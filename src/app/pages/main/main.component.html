@@ -1,9 +1,9 @@
-<div class="overlay"></div>
+<app-overlay *ngIf="isRegged"></app-overlay>
 <div class="main">
   <div class="main__account">
     <a class="main__account_btn" routerLink="account">Account</a>
   </div>
-  <div class="main__reg">
+  <div class="main__reg" *ngIf="isRegged">
     <h1 class="main__reg_title">Enter in your account</h1>
     <div class="main__reg_inputs">
       <input type="text" placeholder="Name" class="main__reg_input" />
@@ -31,15 +31,15 @@
   </div>
   <div class="main__clicker">
     <div class="main__clicker_count">
-      <p class="main__clicker_count-number"></p>
+      <p class="main__clicker_count-number">{{ clickCount }}</p>
     </div>
-    <div class="main__clicker_button">
+    <div class="main__clicker_button" (click)="increaseClicks()">
       <a class="main__clicker_button-btn">Click</a>
     </div>
   </div>
   <div class="main__footer">
     <a class="main__footer_top" routerLink="top-list">Top</a>
-    <a class="main__footer_output">Money output</a>
+    <a class="main__footer_output" routerLink="shop">Clicker upgrade</a>
     <a class="main__footer_logout">Logout</a>
   </div>
 </div>

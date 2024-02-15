@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
   public readonly icon = '../../../assets/images/default-person-icon.png';
+  public readonly bot = '../../../assets/images/bot.png';
+  public readonly click = '../../../assets/images/click.png';
 
   constructor() {}
 }
