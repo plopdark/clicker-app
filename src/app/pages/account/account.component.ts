@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
-import { ServiceService } from '../../shared/services/service.service';
+
+import { ClickerService } from '../../shared/services/clicker.service';
 
 @Component({
   selector: 'app-account',
@@ -13,5 +15,5 @@ import { ServiceService } from '../../shared/services/service.service';
 export class AccountComponent {
   public readonly icon = this.service.icon;
 
-  constructor(private service: ServiceService) {}
+  constructor(private service: ClickerService) {}
 }

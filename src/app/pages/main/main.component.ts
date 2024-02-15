@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
+
+import { MainService } from '../../shared/services/main.service';
 
 @Component({
   selector: 'app-main',
@@ -10,18 +13,16 @@ import { OverlayComponent } from '../../shared/components/overlay/overlay.compon
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit {
-  isRegged: boolean = false;
-  clickCount: number = 0;
+  public isRegged: boolean = false;
+  public clickCount: number = this.main.clickCount;
+
+  constructor(public main: MainService) {}
 
   ngOnInit(): void {
-    const storedClicks = localStorage.getItem('clickCount');
-    if (storedClicks) {
-      this.clickCount = parseInt(storedClicks);
-    }
+    this.main.getClickCount().subscribe((count) => (this.clickCount = count));
   }
 
   public increaseClicks(): void {
-    this.clickCount++;
-    localStorage.setItem('clickCount', this.clickCount.toString());
+    this.main.increaseClicks();
   }
 }

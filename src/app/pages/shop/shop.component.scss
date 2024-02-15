@@ -1,10 +1,17 @@
 @import "../../styles/mixin.scss";
 
+body {
+  height: 100%;
+}
+
 .shop {
   @include _bg-styles;
   min-height: 100%;
   position: relative;
+
   &__container {
+    display: flex;
+    flex-direction: column;
     width: 1000px;
     margin: 70px auto;
     min-height: calc(100vh - 140px);
@@ -12,8 +19,36 @@
     padding: 30px;
   }
 
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    h3 {
+      font-size: 55px;
+    }
+  }
+
+  &__count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    h4 {
+      font-size: 20px;
+    }
+  }
+
+  &__balance {
+    font-size: 38px;
+  }
+
   &__items {
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     margin-bottom: 30px;
     gap: 30px;
@@ -58,10 +93,6 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      :hover {
-        text-decoration: underline;
-        text-decoration-style: dotted;
-      }
       p {
         margin-top: 5px;
         font-weight: 400;

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
 import { RouterModule } from '@angular/router';
-import { ServiceService } from '../../shared/services/service.service';
-import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 import { CommonModule } from '@angular/common';
+
+import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
+import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
+
+import { MainService } from '../../shared/services/main.service';
+import { ClickerService } from '../../shared/services/clicker.service';
 
 @Component({
   selector: 'app-shop',
@@ -15,11 +18,12 @@ import { CommonModule } from '@angular/common';
 export class ShopComponent {
   public isInfoFirstOpened: boolean = false;
   public isInfoSecondOpened: boolean = false;
+  public clickCount: number = this.main.clickCount;
 
   public readonly botImg = this.service.bot;
   public readonly clickImg = this.service.click;
 
-  constructor(private service: ServiceService) {}
+  constructor(private service: ClickerService, private main: MainService) {}
 
   public openInfoFirst(): void {
     this.isInfoFirstOpened = true;
