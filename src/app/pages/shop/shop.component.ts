@@ -23,7 +23,10 @@ export class ShopComponent {
   public readonly botImg = this.service.bot;
   public readonly clickImg = this.service.click;
 
-  constructor(private service: ClickerService, private main: MainService) {}
+  constructor(
+    private readonly service: ClickerService,
+    private readonly main: MainService
+  ) {}
 
   public openInfoFirst(): void {
     this.isInfoFirstOpened = true;

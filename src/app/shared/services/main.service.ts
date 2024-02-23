@@ -11,14 +11,14 @@ export class MainService {
   constructor() {
     const storedClicks = localStorage.getItem('clickCount');
     if (storedClicks) {
-      this.clickCount = parseInt(storedClicks);
+      this.clickCount = JSON.parse(storedClicks);
     }
   }
 
   public increaseClicks(): void {
     this.clickCount++;
     this.clickCountSubject.next(this.clickCount);
-    localStorage.setItem('clickCount', this.clickCount.toString());
+    localStorage.setItem('clickCount', JSON.stringify(this.clickCount));
   }
 
   public getClickCount(): Observable<number> {

@@ -12,15 +12,12 @@
     padding-right: 15px;
     padding-top: 25px;
 
-    &_btn {
+    &-btn {
       justify-content: flex-end;
       display: flex;
       cursor: pointer;
       font-size: 25px;
       text-decoration: none;
-    }
-
-    &_reg {
     }
   }
 
@@ -32,25 +29,26 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    &_title {
+
+    &-title {
       font-size: 35px;
       margin-bottom: 10px;
     }
 
-    &_inputs {
+    &-inputs {
       display: flex;
       flex-direction: column;
       gap: 7px;
     }
 
-    &_input {
+    &-input {
       width: 330px;
       height: 30px;
       padding: 15px;
       font-size: 20px;
     }
 
-    &_remember {
+    &-remember {
       margin-top: 10px;
       display: flex;
       flex-direction: row;
@@ -58,15 +56,12 @@
       font-size: 20px;
     }
 
-    &_check {
+    &-check {
       width: 17px;
       cursor: pointer;
     }
 
-    &_text {
-    }
-
-    &_buttons {
+    &-buttons {
       margin-top: 10px;
       display: flex;
       align-items: center;
@@ -74,13 +69,11 @@
       gap: 10px;
     }
 
-    &_button {
-      :hover {
-        text-decoration: underline;
-      }
+    &-button :hover {
+      text-decoration: underline;
     }
 
-    &_btn {
+    &-btn {
       font-size: 20px;
       cursor: pointer;
     }
@@ -92,15 +85,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    &_count {
+
+    &-count {
       margin-bottom: 30px;
       font-size: 30px;
     }
 
-    &_count-number {
-    }
-
-    &_button {
+    &-button {
       width: 400px;
       height: 400px;
       background-color: #f2ff00;
@@ -111,9 +102,14 @@
       cursor: pointer;
     }
 
-    &_button-btn {
+    &-button-btn {
       color: #000;
       font-size: 50px;
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      font-family: Roboto;
+      font-weight: 700;
     }
   }
 
@@ -125,7 +121,7 @@
     height: 100px;
     align-items: center;
 
-    &_top {
+    &-top {
       cursor: pointer;
       border: 3px solid #000;
       width: 100%;
@@ -135,7 +131,7 @@
       align-items: center;
     }
 
-    &_output {
+    &-output {
       cursor: pointer;
       border: 3px solid #000;
       width: 100%;
@@ -145,7 +141,7 @@
       align-items: center;
     }
 
-    &_logout {
+    &-logout {
       cursor: pointer;
       border: 3px solid #000;
       width: 100%;

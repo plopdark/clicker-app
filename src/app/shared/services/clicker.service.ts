@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ClickerService {
-  public readonly icon = '../../../assets/images/default-person-icon.png';
-  public readonly bot = '../../../assets/images/bot.png';
-  public readonly click = '../../../assets/images/click.png';
+  public readonly icon = 'assets/images/default-person-icon.png';
+  public readonly bot = 'assets/images/bot.png';
+  public readonly click = 'assets/images/click.png';
 
   constructor() {}
 }
