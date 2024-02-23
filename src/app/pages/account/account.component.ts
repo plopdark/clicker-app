@@ -15,6 +15,7 @@ import { ClickerService } from '../../shared/services/clicker.service';
 })
 export class AccountComponent {
   public readonly icon = this.service.icon;
+  public routerLinks = this.service.routerLinks;
 
   constructor(private readonly service: ClickerService) {}
 }

@@ -68,7 +68,7 @@ body {
       margin-right: 20px;
     }
 
-    &_title {
+    &-title {
       font-size: 35px;
       margin-right: 10px;
 
@@ -79,14 +79,23 @@ body {
       }
     }
 
-    &_inf {
+    &-inf {
       text-decoration: underline;
       cursor: pointer;
       color: #b7b7b7;
       text-decoration-style: dotted;
     }
 
-    &_button {
+    &-info {
+      position: absolute;
+      top: 35%;
+      right: 35%;
+      z-index: 10;
+      background-color: #0e005d;
+      max-width: 650px;
+    }
+
+    &-button {
       margin-left: auto;
       display: flex;
       flex-direction: row;
@@ -100,7 +109,7 @@ body {
       }
     }
 
-    &_btn {
+    &-btn {
       background-color: #fff;
       border: none;
       padding: 10px;
@@ -142,4 +151,8 @@ body {
       font-size: 18px;
     }
   }
+}
+
+.title {
+  min-width: 80px;
 }

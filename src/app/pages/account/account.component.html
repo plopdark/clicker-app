@@ -8,7 +8,7 @@
       <app-account-input [label]="'Your email'"></app-account-input>
       <app-account-input [label]="'Your password'"></app-account-input>
       <div class="account__top-position">
-        Your position is <a routerLink="/top-list">#the best</a>
+        Your position is <a [routerLink]="routerLinks.TopList">#the best</a>
       </div>
       <app-back-button routerLink=""></app-back-button>
     </div>

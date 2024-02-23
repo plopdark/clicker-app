@@ -25,21 +25,21 @@
     border-radius: 20px;
     padding: 0 20px;
 
-    &_position {
+    &-position {
       margin-right: 40px;
       font-size: 25px;
     }
 
-    &_icon {
+    &-icon {
       cursor: pointer;
       margin-right: 20px;
     }
 
-    &_img {
+    &-img {
       width: 50px;
     }
 
-    &_nickname {
+    &-nickname {
       cursor: pointer;
       font-size: 25px;
       color: #fff;

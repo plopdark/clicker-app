@@ -1,0 +1,12 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  font-weight: 400;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin-bottom: 5px;
+}

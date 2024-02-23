@@ -1,5 +1,4 @@
 .button {
-  cursor: pointer;
   :hover {
     font-size: 31px;
   }
@@ -12,4 +11,8 @@
   background-color: #0e005d;
   padding: 10px;
   border-radius: 10%;
+  border: none;
+  font-family: Roboto;
+  font-weight: 700;
+  cursor: pointer;
 }

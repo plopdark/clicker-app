@@ -2,16 +2,16 @@
   <div class="top__container">
     <div class="top__items">
       <div class="top__item">
-        <div class="top__item_position">1</div>
-        <a class="top__item_icon">
+        <div class="top__item-position">1</div>
+        <a class="top__item-icon">
           <img
             [src]="icon"
             alt="avatar"
-            routerLink="/account"
-            class="top__item_img"
+            [routerLink]="routerLinks.Account"
+            class="top__item-img"
           />
         </a>
-        <a class="top__item_nickname" routerLink="/account">Name</a>
+        <a class="top__item-nickname" routerLink="/account">Name</a>
       </div>
     </div>
     <app-back-button routerLink=""></app-back-button>

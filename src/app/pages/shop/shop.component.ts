@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
+import { ShopItemsComponent } from '../../shared/components/shop-items/shop-items.component';
 
 import { MainService } from '../../shared/services/main.service';
 import { ClickerService } from '../../shared/services/clicker.service';
@@ -11,7 +12,13 @@ import { ClickerService } from '../../shared/services/clicker.service';
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [BackButtonComponent, RouterModule, OverlayComponent, CommonModule],
+  imports: [
+    BackButtonComponent,
+    RouterModule,
+    OverlayComponent,
+    CommonModule,
+    ShopItemsComponent,
+  ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
 })
