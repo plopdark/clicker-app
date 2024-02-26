@@ -1,0 +1,16 @@
+<div class="account">
+  <div class="account__container">
+    <div class="account__image">
+      <img [src]="icon" alt="icon" class="account__img" />
+    </div>
+    <div class="account__info">
+      <app-account-input [label]="'Your nickname'"></app-account-input>
+      <app-account-input [label]="'Your email'"></app-account-input>
+      <app-account-input [label]="'Your password'"></app-account-input>
+      <div class="account__top-position">
+        Your position is <a [routerLink]="routerLinks.TopList">#the best</a>
+      </div>
+      <app-back-button routerLink=""></app-back-button>
+    </div>
+  </div>
+</div>

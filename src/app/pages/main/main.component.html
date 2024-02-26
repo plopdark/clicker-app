@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="main__account">
+    <a routerLink="login">login</a>
+    <a class="main__account-btn" routerLink="account">Account</a>
+  </div>
+  <div class="main__clicker">
+    <div class="main__clicker-count">
+      <p class="main__clicker-count-number">{{ clickCount }}</p>
+    </div>
+    <div class="main__clicker-button" (click)="increaseClicks()">
+      <button class="main__clicker-button-btn">Click</button>
+    </div>
+  </div>
+  <div class="main__footer">
+    <a class="main__footer-top" routerLink="top-list">Top</a>
+    <a class="main__footer-output" routerLink="shop">Clicker upgrade</a>
+    <a class="main__footer-logout">Logout</a>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@import "../../styles/mixin.scss";
+
+.account {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  @include _bg-styles;
+
+  &__container {
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__image {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 300px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__top-position {
+    font-size: 22px;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}

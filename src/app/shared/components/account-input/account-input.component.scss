@@ -1,0 +1,15 @@
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    width: 600px;
+    height: 40px;
+    background-color: #0e005d;
+    border: 2px solid #0e005d;
+    margin-top: 5px;
+    color: #fff;
+    padding-left: 15px;
+    font-size: 22px;
+  }
+}
