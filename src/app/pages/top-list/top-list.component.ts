@@ -17,5 +17,5 @@ export class TopListComponent {
   public readonly icon = this.service.icon;
   public routerLinks = this.service.routerLinks;
 
-  constructor(private service: ClickerService) {}
+  constructor(private readonly service: ClickerService) {}
 }
