@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
-
 import { MainService } from '../../shared/services/main.service';
 import { Subscription } from 'rxjs';
 
@@ -14,7 +12,6 @@ import { Subscription } from 'rxjs';
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit, OnDestroy {
-  public isRegged: boolean = false;
   public clickCount: number = this.main.clickCount;
   public clickCountSubscription: Subscription | undefined;
 

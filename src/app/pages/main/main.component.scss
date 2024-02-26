@@ -21,64 +21,6 @@
     }
   }
 
-  &__reg {
-    z-index: 6;
-    top: 37%;
-    left: 41%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    &-title {
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-
-    &-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    &-input {
-      width: 330px;
-      height: 30px;
-      padding: 15px;
-      font-size: 20px;
-    }
-
-    &-remember {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      gap: 7px;
-      font-size: 20px;
-    }
-
-    &-check {
-      width: 17px;
-      cursor: pointer;
-    }
-
-    &-buttons {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    &-button :hover {
-      text-decoration: underline;
-    }
-
-    &-btn {
-      font-size: 20px;
-      cursor: pointer;
-    }
-  }
-
   &__clicker {
     display: flex;
     flex: 1 1 auto;

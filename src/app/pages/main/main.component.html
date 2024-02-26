@@ -1,33 +1,7 @@
-<app-overlay *ngIf="isRegged"></app-overlay>
 <div class="main">
   <div class="main__account">
+    <a routerLink="login">login</a>
     <a class="main__account-btn" routerLink="account">Account</a>
-  </div>
-  <div class="main__reg" *ngIf="isRegged">
-    <h1 class="main__reg-title">Enter in your account</h1>
-    <div class="main__reg-inputs">
-      <input type="text" placeholder="Name" class="main__reg-input" />
-      <input type="text" placeholder="Email" class="main__reg-input" />
-      <input type="text" placeholder="Password" class="main__reg-input" />
-      <input
-        type="text"
-        placeholder="Repeat password"
-        class="main__reg-input"
-      />
-    </div>
-    <div class="main__reg-remember">
-      <input type="checkbox" class="main__reg-check" />
-      <p class="main__reg-text">Remember me</p>
-    </div>
-    <div class="main__reg-buttons">
-      <div class="main__reg-button">
-        <a class="main__reg-btn">Log In</a>
-      </div>
-      <p>Or</p>
-      <div class="main__reg-button">
-        <a class="main__reg-btn">Sign Up</a>
-      </div>
-    </div>
   </div>
   <div class="main__clicker">
     <div class="main__clicker-count">
