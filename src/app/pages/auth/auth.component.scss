@@ -8,6 +8,13 @@
   align-items: center;
   @include _bg-styles;
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__title {
     font-size: 35px;
     margin-bottom: 10px;
@@ -21,9 +28,11 @@
 
   &__input {
     width: 330px;
-    height: 30px;
+    height: 35px;
     padding: 15px;
     font-size: 20px;
+    border-radius: 10px;
+    border: none;
   }
 
   &__remember {
@@ -40,7 +49,7 @@
   }
 
   &__buttons {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -59,5 +68,28 @@
     color: #fff;
     font-weight: 700;
     border: none;
+  }
+
+  &__submit-button {
+    margin-top: 20px;
+    border: 1px solid #0e005d;
+    border-radius: 22px;
+
+    :hover {
+      background-color: inherit;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__submit-btn {
+    font-family: Roboto;
+    color: #fff;
+    font-size: 30px;
+    background-color: #0e005d;
+    border: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 22px;
+    cursor: pointer;
   }
 }

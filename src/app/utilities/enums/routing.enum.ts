@@ -3,4 +3,5 @@ export enum RoutingEnum {
   Account = 'account',
   TopList = 'top-list',
   Shop = 'shop',
+  Auth = 'auth',
 }

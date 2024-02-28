@@ -24,6 +24,7 @@ export class ShopComponent {
   public isInfoFirstOpened: boolean = false;
   public isInfoSecondOpened: boolean = false;
   public clickCount: number = this.main.clickCount;
+  public routerLinks = this.service.routerLinks;
 
   public readonly botImg = this.service.bot;
   public readonly clickImg = this.service.click;

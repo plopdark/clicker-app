@@ -1,5 +1,5 @@
 <div class="reg">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="reg__form">
     <h1 class="reg__title">Enter in your account</h1>
     <div class="reg__inputs">
       <input
@@ -9,18 +9,21 @@
         *ngIf="isSignUp"
         [formControl]="loginForm.controls.name"
       />
+
       <input
         type="email"
         placeholder="Email"
         class="reg__input"
         [formControl]="loginForm.controls.email"
       />
+      <span class="reg__error"></span>
       <input
         type="password"
         placeholder="Password"
         class="reg__input"
         [formControl]="loginForm.controls.password"
       />
+      <span class="reg__error"></span>
       <input
         type="password"
         placeholder="Repeat password"
@@ -38,16 +41,19 @@
       <p class="reg__text">Remember me</p>
     </div>
     <div class="reg__buttons">
-      <div class="reg__button" (click)="onLogIn()">
+      <div class="reg__button" (click)="isSignUp = false">
         <button class="reg__btn">Log In</button>
       </div>
       <p>Or</p>
-      <div class="reg__button" (click)="onSignUp()">
+      <div class="reg__button" (click)="isSignUp = true">
         <button class="reg__btn">Sign Up</button>
       </div>
     </div>
     <div class="reg__submit-button">
-      <button type="submit" class="reg__submit-btn">Submit</button>
+      <button type="submit" class="reg__submit-btn" (click)="onSubmit()">
+        Submit
+      </button>
+      <button class="reg__submit-btn" (click)="onDelete()">Delete</button>
     </div>
   </form>
 </div>

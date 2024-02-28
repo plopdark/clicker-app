@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 import { MainService } from '../../shared/services/main.service';
 import { Subscription } from 'rxjs';
+import { ClickerService } from '../../shared/services/clicker.service';
 
 @Component({
   selector: 'app-main',
@@ -14,8 +15,12 @@ import { Subscription } from 'rxjs';
 export class MainComponent implements OnInit, OnDestroy {
   public clickCount: number = this.main.clickCount;
   public clickCountSubscription: Subscription | undefined;
+  public routerLinks = this.service.routerLinks;
 
-  constructor(private readonly main: MainService) {}
+  constructor(
+    private readonly main: MainService,
+    private readonly service: ClickerService
+  ) {}
 
   ngOnInit(): void {
     this.clickCountSubscription = this.main
