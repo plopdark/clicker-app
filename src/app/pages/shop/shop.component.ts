@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
 import { ShopItemsComponent } from '../../shared/components/shop-items/shop-items.component';
-import { MainService } from '../../shared/services/main.service';
 import { ClickerService } from '../../shared/services/clicker.service';
 
 @Component({
@@ -23,16 +22,13 @@ import { ClickerService } from '../../shared/services/clicker.service';
 export class ShopComponent {
   public isInfoFirstOpened: boolean = false;
   public isInfoSecondOpened: boolean = false;
-  public clickCount: number = this.main.clickCount;
+  public clickCount: number = this.service.clickCount;
   public routerLinks = this.service.routerLinks;
 
   public readonly botImg = this.service.bot;
   public readonly clickImg = this.service.click;
 
-  constructor(
-    private readonly service: ClickerService,
-    private readonly main: MainService
-  ) {}
+  constructor(private readonly service: ClickerService) {}
 
   public openInfoFirst(): void {
     this.isInfoFirstOpened = true;

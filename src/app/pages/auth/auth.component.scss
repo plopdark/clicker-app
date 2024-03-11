@@ -72,8 +72,14 @@
 
   &__submit-button {
     margin-top: 20px;
-    border: 1px solid #0e005d;
     border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    button {
+      border: 1px solid #0e005d;
+    }
 
     :hover {
       background-color: inherit;
@@ -91,5 +97,22 @@
     padding: 10px 15px;
     border-radius: 22px;
     cursor: pointer;
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__image-text {
+  }
+
+  &__image-img {
+    width: 20px;
+    margin-right: -15px;
+  }
+
+  &__add-img {
   }
 }

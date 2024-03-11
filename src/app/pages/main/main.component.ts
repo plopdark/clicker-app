@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
-import { MainService } from '../../shared/services/main.service';
 import { Subscription } from 'rxjs';
 import { ClickerService } from '../../shared/services/clicker.service';
+import { AuthComponent } from '../auth/auth.component';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -13,23 +14,27 @@ import { ClickerService } from '../../shared/services/clicker.service';
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit, OnDestroy {
-  public clickCount: number = this.main.clickCount;
+  public clickCount: number = this.service.clickCount;
   public clickCountSubscription: Subscription | undefined;
   public routerLinks = this.service.routerLinks;
 
   constructor(
-    private readonly main: MainService,
-    private readonly service: ClickerService
+    private readonly service: ClickerService,
+    private readonly auth: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.clickCountSubscription = this.main
+    this.clickCountSubscription = this.service
       .getClickCount()
       .subscribe((count) => (this.clickCount = count));
   }
 
   public increaseClicks(): void {
-    this.main.increaseClicks();
+    this.service.increaseClicks();
+  }
+
+  public deleteAccount(): void {
+    this.auth.onDelete();
   }
 
   ngOnDestroy(): void {

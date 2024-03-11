@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClickerService } from '../../shared/services/clicker.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -18,21 +19,15 @@ import { ClickerService } from '../../shared/services/clicker.service';
 })
 export class AuthComponent implements OnInit {
   public routerLinks = this.service.routerLinks;
-  public loginForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.email]),
-    password: new FormControl('', [
-      Validators.minLength(6),
-      Validators.required,
-    ]),
-    repeatPassword: new FormControl('', [Validators.required]),
-    rememberMe: new FormControl<boolean>(false),
-  });
+  public loginForm = this.auth.loginForm;
   public isSignUp: boolean = false;
+
+  public icon = null;
 
   constructor(
     private readonly router: Router,
-    private readonly service: ClickerService
+    private readonly service: ClickerService,
+    private readonly auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -65,8 +60,17 @@ export class AuthComponent implements OnInit {
     }
   }
 
-  @Output() public onDelete(): void {
-    localStorage.removeItem('loginFormData');
-    this.loginForm.reset();
+  public onFileSelected(event: any) {
+    if (event.target.files) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event: any) => {
+        this.icon = event.target.result;
+      };
+    }
+  }
+
+  public onDelete(): void {
+    this.auth.onDelete();
   }
 }

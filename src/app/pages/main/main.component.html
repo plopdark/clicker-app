@@ -15,6 +15,11 @@
     <a class="main__footer-output" [routerLink]="routerLinks.Shop"
       >Clicker upgrade</a
     >
-    <a class="main__footer-logout" [routerLink]="routerLinks.Auth">Logout</a>
+    <a
+      class="main__footer-logout"
+      [routerLink]="routerLinks.Auth"
+      (click)="deleteAccount()"
+      >Logout</a
+    >
   </div>
 </div>

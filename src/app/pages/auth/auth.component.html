@@ -9,7 +9,6 @@
         *ngIf="isSignUp"
         [formControl]="loginForm.controls.name"
       />
-
       <input
         type="email"
         placeholder="Email"
@@ -30,6 +29,16 @@
         class="reg__input"
         *ngIf="isSignUp"
         [formControl]="loginForm.controls.repeatPassword"
+      />
+    </div>
+    <div class="reg__image">
+      <span class="reg__image-text">Add profile picture</span>
+      <img [src]="icon" class="reg__image-img" />
+      <input
+        type="file"
+        class="reg__add-img"
+        (change)="onFileSelected($event)"
+        [formControl]="loginForm.controls.image"
       />
     </div>
     <div class="reg__remember">
@@ -53,7 +62,9 @@
       <button type="submit" class="reg__submit-btn" (click)="onSubmit()">
         Submit
       </button>
-      <button class="reg__submit-btn" (click)="onDelete()">Delete</button>
+      <button class="reg__submit-btn" id="delete" (click)="onDelete()">
+        Delete
+      </button>
     </div>
   </form>
 </div>
