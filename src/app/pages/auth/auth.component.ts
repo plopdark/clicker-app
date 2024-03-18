@@ -73,4 +73,16 @@ export class AuthComponent implements OnInit {
   public onDelete(): void {
     this.auth.onDelete();
   }
+
+  public get email() {
+    return this.loginForm.get('email');
+  }
+
+  public get password() {
+    return this.loginForm.get('password');
+  }
+
+  public get repeatPassword() {
+    return this.loginForm.get('repeatPassword');
+  }
 }

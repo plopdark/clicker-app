@@ -16,12 +16,9 @@ import { AuthService } from '../../shared/services/auth.service';
 export class AccountComponent {
   public readonly icon = this.service.icon;
   public routerLinks = this.service.routerLinks;
-  public loginForm: FormGroup;
 
   constructor(
     private readonly service: ClickerService,
     private readonly auth: AuthService
-  ) {
-    this.loginForm = this.auth.loginForm;
-  }
+  ) {}
 }

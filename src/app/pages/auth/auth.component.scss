@@ -13,6 +13,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #0e005d;
+    padding: 20px;
+    border-radius: 25px;
   }
 
   &__title {
@@ -78,7 +81,8 @@
     gap: 10px;
 
     button {
-      border: 1px solid #0e005d;
+      border: 1px solid #00061d;
+      background-color: #00061d;
     }
 
     :hover {
@@ -100,8 +104,11 @@
   }
 
   &__image {
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
   }
 
@@ -115,4 +122,13 @@
 
   &__add-img {
   }
+
+  &__error {
+    font-size: 13px;
+    font-weight: 400;
+    color: red;
+  }
+}
+input.ng-invalid.ng-touched {
+  border: 0.9px solid red;
 }

@@ -15,14 +15,25 @@
         class="reg__input"
         [formControl]="loginForm.controls.email"
       />
-      <span class="reg__error"></span>
+      <small class="reg__error" *ngIf="email?.invalid && email?.touched">
+        <span *ngIf="email?.errors?.['required']">Email is required</span>
+        <span *ngIf="email?.errors?.['email']">Please provide some email</span>
+      </small>
       <input
         type="password"
         placeholder="Password"
         class="reg__input"
         [formControl]="loginForm.controls.password"
       />
-      <span class="reg__error"></span>
+      <small class="reg__error" *ngIf="password?.invalid && password?.touched">
+        <span *ngIf="password?.errors?.['required']"
+          >You should have a password</span
+        >
+        <span *ngIf="password?.errors?.['minlength']"
+          >Password must contain at least 6 symbols.Now it has
+          {{ loginForm.controls.password.value?.length }}</span
+        >
+      </small>
       <input
         type="password"
         placeholder="Repeat password"
@@ -30,15 +41,22 @@
         *ngIf="isSignUp"
         [formControl]="loginForm.controls.repeatPassword"
       />
+      <small
+        class="reg__error"
+        *ngIf="
+          password?.value !== repeatPassword?.value && repeatPassword?.touched
+        "
+      >
+        <span>Password is not the same</span>
+      </small>
     </div>
-    <div class="reg__image">
+    <div class="reg__image" *ngIf="isSignUp">
       <span class="reg__image-text">Add profile picture</span>
       <img [src]="icon" class="reg__image-img" />
       <input
         type="file"
         class="reg__add-img"
         (change)="onFileSelected($event)"
-        [formControl]="loginForm.controls.image"
       />
     </div>
     <div class="reg__remember">
@@ -59,12 +77,15 @@
       </div>
     </div>
     <div class="reg__submit-button">
-      <button type="submit" class="reg__submit-btn" (click)="onSubmit()">
+      <button
+        type="submit"
+        class="reg__submit-btn"
+        (click)="onSubmit()"
+        [disabled]="loginForm.invalid"
+      >
         Submit
       </button>
-      <button class="reg__submit-btn" id="delete" (click)="onDelete()">
-        Delete
-      </button>
+      <button class="reg__submit-btn" (click)="onDelete()">Delete</button>
     </div>
   </form>
 </div>
