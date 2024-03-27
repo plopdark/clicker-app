@@ -14,12 +14,10 @@ import { AuthService } from '../../shared/services/auth.service';
   styleUrl: './main.component.scss',
 })
 export class MainComponent implements OnInit, OnDestroy {
-  public clickCount: number = this.service.clickCount;
+  public clickCount: number = this.service.user.clickCount;
   public clickCountSubscription: Subscription | undefined;
   public routerLinks = this.service.routerLinks;
   public loginForm = this.auth.loginForm;
-  public icon: string = '';
-  public accountName = this.auth.name;
 
   constructor(
     private readonly service: ClickerService,
@@ -30,8 +28,6 @@ export class MainComponent implements OnInit, OnDestroy {
     this.clickCountSubscription = this.service
       .getClickCount()
       .subscribe((count) => (this.clickCount = count));
-
-    console.log(this.auth.name.value);
   }
 
   public increaseClicks(): void {

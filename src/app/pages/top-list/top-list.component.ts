@@ -13,7 +13,7 @@ import { ClickerService } from '../../shared/services/clicker.service';
 export class TopListComponent {
   public readonly icon = this.service.icon;
   public routerLinks = this.service.routerLinks;
-  public clickCount = this.service.clickCount;
+  public clickCount = this.service.user.clickCount;
 
   constructor(private readonly service: ClickerService) {}
 }

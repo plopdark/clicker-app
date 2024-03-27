@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthService {
   public loginForm = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
+    name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [
       Validators.required,
@@ -16,10 +16,6 @@ export class AuthService {
     image: new FormControl(''),
     rememberMe: new FormControl<boolean>(false),
   });
-
-  get name() {
-    return this.loginForm.controls.name;
-  }
 
   public onDelete(): void {
     localStorage.removeItem('loginFormData');
