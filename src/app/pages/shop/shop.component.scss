@@ -144,6 +144,11 @@ body {
       flex-direction: row;
       list-style-type: none;
       margin-bottom: 5px;
+
+      p {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
     }
 
     h2 {
@@ -155,4 +160,64 @@ body {
 
 .title {
   min-width: 80px;
+}
+
+.item__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reset {
+  &__container {
+    position: absolute;
+    top: 40%;
+    right: 35%;
+    z-index: 10;
+    background-color: #0e005d;
+    max-width: 650px;
+    padding: 20px;
+  }
+
+  &__title {
+    font-size: 25px;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__button {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    border-radius: 15px;
+    width: 70px;
+  }
+
+  &__button:hover {
+    font-size: 17px;
+    padding: 8.5px;
+  }
+
+  &__button:first-child {
+    background-color: red;
+  }
+
+  &__button:last-child {
+    background-color: green;
+  }
+}
+
+.bigger-text {
+  font-weight: 700;
+  margin: 0;
 }

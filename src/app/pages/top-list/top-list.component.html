@@ -12,8 +12,9 @@
           />
         </a>
         <a class="top__item-nickname" routerLink="/account">Name</a>
+        <p class="top__item-count">Count: {{ clickCount }}</p>
       </div>
     </div>
-    <app-back-button routerLink=""></app-back-button>
+    <app-back-button [routerLink]="routerLinks.Main"></app-back-button>
   </div>
 </div>

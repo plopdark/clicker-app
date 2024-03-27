@@ -1,0 +1,134 @@
+@import "../../styles/mixin.scss";
+
+.reg {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include _bg-styles;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e005d;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  &__title {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  &__input {
+    width: 330px;
+    height: 35px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  &__remember {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    font-size: 20px;
+  }
+
+  &__check {
+    width: 17px;
+    cursor: pointer;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__button :hover {
+    text-decoration: underline;
+  }
+
+  &__btn {
+    font-size: 20px;
+    cursor: pointer;
+    background: inherit;
+    font-size: Roboto;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+  }
+
+  &__submit-button {
+    margin-top: 20px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    button {
+      border: 1px solid #00061d;
+      background-color: #00061d;
+    }
+
+    :hover {
+      background-color: inherit;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__submit-btn {
+    font-family: Roboto;
+    color: #fff;
+    font-size: 30px;
+    background-color: #0e005d;
+    border: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 22px;
+    cursor: pointer;
+  }
+
+  &__image {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__image-text {
+  }
+
+  &__image-img {
+    width: 20px;
+    margin-right: -15px;
+  }
+
+  &__add-img {
+  }
+
+  &__error {
+    font-size: 13px;
+    font-weight: 400;
+    color: red;
+  }
+}
+input.ng-invalid.ng-touched {
+  border: 0.9px solid red;
+}

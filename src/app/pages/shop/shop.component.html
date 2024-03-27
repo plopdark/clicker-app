@@ -1,6 +1,6 @@
 <app-overlay
   (click)="overlayClosed()"
-  *ngIf="isInfoFirstOpened || isInfoSecondOpened"
+  *ngIf="isInfoFirstOpened || isInfoSecondOpened || resetAsk"
 ></app-overlay>
 <div class="shop">
   <div class="shop__container">
@@ -55,12 +55,36 @@
               [title]="'Level 5:'"
               [info]="'Cost: 150 coins. Earn 5 coins per click.'"
             ></app-shop-items>
-            <h2>Your current level is 1</h2>
+            <h2>Your current level is {{ currentLevel }}</h2>
           </div>
         </div>
         <div class="shop__item-button">
-          <p>level 1</p>
-          <button class="shop__item-btn">Upgrade</button>
+          <p>level {{ currentLevel }}</p>
+          <div class="item__buttons">
+            <button class="shop__item-btn" (click)="increaseLevel()">
+              <span>Upgrade</span>
+            </button>
+            <button
+              class="shop__item-btn"
+              *ngIf="currentLevel > 1"
+              (click)="resetAsking()"
+            >
+              Reset upgrades
+            </button>
+            <div class="reset__container" *ngIf="resetAsk">
+              <span class="reset__title">
+                Are you sure you want to reset your upgrades?
+              </span>
+              <div class="reset__buttons">
+                <button class="reset__button" (click)="overlayClosed()">
+                  No
+                </button>
+                <button class="reset__button" (click)="resetUpgrades()">
+                  Yes
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="shop__item">
@@ -90,7 +114,10 @@
             <ul>
               <li>
                 <h4 class="title">Cost:</h4>
-                The AutoClicker can be yours for 500 coins.
+                <p>
+                  The AutoClicker can be yours for
+                  <span class="bigger-text">500 coins</span>.
+                </p>
               </li>
               <li>
                 <h4 class="title">Activation:</h4>
@@ -99,17 +126,37 @@
               </li>
               <li>
                 <h4 class="title">Earnings:</h4>
-                With its swift performance, the AutoClicker generates 3 coins
+                With its swift performance, the AutoClicker generates 5 coins
                 per second, exponentially boosting your wealth accumulation.
               </li>
             </ul>
           </div>
         </div>
         <div class="shop__item-button">
-          <button class="shop__item-btn">Buy</button>
+          <button
+            class="shop__item-btn"
+            (click)="buyAutoClicker()"
+            *ngIf="!isAutoClickerBought"
+          >
+            Buy
+          </button>
+          <button
+            class="shop__item-btn"
+            (click)="turnOffAutoClicker()"
+            *ngIf="isAutoClickerActive"
+          >
+            Turn off
+          </button>
+          <button
+            class="shop__item-btn"
+            (click)="turnOnAutoClicker()"
+            *ngIf="!isAutoClickerActive"
+          >
+            Turn on
+          </button>
         </div>
       </div>
     </div>
-    <app-back-button routerLink="/"></app-back-button>
+    <app-back-button [routerLink]="routerLinks.Main"></app-back-button>
   </div>
 </div>

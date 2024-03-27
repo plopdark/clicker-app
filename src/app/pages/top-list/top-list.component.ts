@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BackButtonComponent } from '../../shared/components/back-button/back-button.component';
-import { RouterLinkEnum } from '../../utilities/enums/router-link.enum';
 import { ClickerService } from '../../shared/services/clicker.service';
 
 @Component({
@@ -14,6 +13,7 @@ import { ClickerService } from '../../shared/services/clicker.service';
 export class TopListComponent {
   public readonly icon = this.service.icon;
   public routerLinks = this.service.routerLinks;
+  public clickCount = this.service.user.clickCount;
 
   constructor(private readonly service: ClickerService) {}
 }
